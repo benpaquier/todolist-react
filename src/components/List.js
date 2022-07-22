@@ -18,18 +18,12 @@ class List extends Component {
     // state initial
     this.state = {
       editIndex: null,
-      editDescription: "",
-      editStatus: ""
+      editDescription: '',
+      editStatus: ''
     }
-
-    this.setEditIndex = this.setEditIndex.bind(this)
-    this.handleTaskDescriptionChange = this.handleTaskDescriptionChange.bind(this)
-    this.handleStatusChange = this.handleStatusChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.reset = this.reset.bind(this)
   }
 
-  setEditIndex(index) {
+  setEditIndex = index => {
     this.setState({
       editIndex: index,
       editDescription: this.props.tasks[index].description,
@@ -37,38 +31,38 @@ class List extends Component {
     })
   }
 
-  handleTaskDescriptionChange(e) {
+  handleTaskDescriptionChange = e => {
     this.setState({ editDescription: e.target.value })
   }
 
-  handleStatusChange(e) {
+  handleStatusChange = e => {
     this.setState({ editStatus: e.target.value })
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault()
     const { editIndex, editDescription, editStatus } = this.state
-    
-    this.props.modifyTask(editIndex, editDescription, editStatus)    
+
+    this.props.modifyTask(editIndex, editDescription, editStatus)
     this.reset()
   }
 
-  reset() {
+  reset = () => {
     this.setState({
       editIndex: null,
-      editDescription: "",
-      editStatus: ""
+      editDescription: '',
+      editStatus: ''
     })
   }
 
   render() {
     return (
-      <div className="mt-5">
+      <div className='mt-5'>
         <h3>List</h3>
-        <ul className="list-group">
+        <ul className='list-group'>
           {this.props.tasks.length === 0 && <p>No tasks yet</p>}
           {this.props.tasks.map((task, index) => (
-            <li key={index} className="list-group-item">
+            <li key={index} className='list-group-item'>
               {this.state.editIndex !== index ? (
                 <Task
                   task={task}

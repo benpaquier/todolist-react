@@ -13,37 +13,36 @@ class Form extends Component {
 
     // state initial
     this.state = {
-      task: ""
+      task: ''
     }
-
-    this.handleTaskDescriptionChange = this.handleTaskDescriptionChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleTaskDescriptionChange(e) {
+  handleTaskDescriptionChange = e => {
     this.setState({ task: e.target.value })
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault()
     this.props.addTask(this.state.task)
-    this.setState({ task: "" })
+    this.setState({ task: '' })
   }
 
   render() {
     return (
-      <form className="row mb-5" onSubmit={this.handleSubmit}>
-        <div className="col-11">
+      <form className='row mb-5' onSubmit={this.handleSubmit}>
+        <div className='col-11'>
           <input
-            type="text"
-            className="form-control col-8"
-            placeholder="Task description"
+            type='text'
+            className='form-control col-8'
+            placeholder='Task description'
             onChange={this.handleTaskDescriptionChange}
             value={this.state.task}
           />
         </div>
-        <div className="col-1 d-flex justify-content-end">
-          <button type="submit" className="btn btn-primary">Submit</button>
+        <div className='col-1 d-flex justify-content-end'>
+          <button type='submit' className='btn btn-primary'>
+            Submit
+          </button>
         </div>
       </form>
     )

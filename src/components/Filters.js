@@ -12,32 +12,32 @@ class Filters extends Component {
     return (
       <div>
         <h3>Filters</h3>
-        <div className="d-flex">
+        <div className='d-flex'>
           <button
-            type="button"
-            className="me-3 btn btn-outline-secondary"
-            onClick={() => setFilter("")}
+            type='button'
+            className='me-3 btn btn-outline-secondary'
+            onClick={() => setFilter('')}
           >
             All
           </button>
           <button
-            type="button"
-            className="me-3 btn btn-outline-danger"
-            onClick={() => setFilter("To do")}
+            type='button'
+            className='me-3 btn btn-outline-danger'
+            onClick={() => setFilter('To do')}
           >
             To do
           </button>
           <button
-            type="button"
-            className="me-3 btn btn-outline-warning"
-            onClick={() => setFilter("Doing")}
+            type='button'
+            className='me-3 btn btn-outline-warning'
+            onClick={() => setFilter('Doing')}
           >
             Doing
           </button>
           <button
-            type="button"
-            className="me-3 btn btn-outline-success"
-            onClick={() => setFilter("Done")}
+            type='button'
+            className='me-3 btn btn-outline-success'
+            onClick={() => setFilter('Done')}
           >
             Done
           </button>
